@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Divyanshi</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            text-align: center;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-top: 60px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 1.4rem;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 20px;
+            width: 75%;
+            margin: 40px auto;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        .balloons {
+            font-size: 3rem;
+            margin-top: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Confetti styles */
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: fall 4s linear infinite;
+            opacity: 0.9;
+        }
+
+        /* Button */
+        .glow-btn {
+            background: white;
+            color: #ff69b4;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            border-radius: 40px;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+            animation: glow 2s infinite alternate;
+        }
+
+        .glow-btn:hover {
+            transform: scale(1.06);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); }
+            100% { transform: translateY(110vh) rotate(360deg); }
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px white; }
+            100% { box-shadow: 0 0 25px white; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎉 Happy Birthday, Divyanshi! 🎉</h1>
+
+    <div class="balloons">🎈🎈🎈</div>
+
+    <div class="card">
+        <p>Wishing you a day filled with joy, surprises, and all the happiness you deserve. 
+        May this year bring amazing moments, success, and endless smiles! 💖</p>
+    </div>
+
+    <button class="glow-btn" onclick="alert('🎉 Have an amazing birthday, Divyanshi! 🎉')">
+        Click for a Birthday Surprise
+    </button>
+
+    <div class="confetti-container"></div>
+
+    <script>
+        function createConfetti() {
+            const container = document.querySelector('.confetti-container');
+            for (let i = 0; i < 50; i++) {
+                const conf = document.createElement('div');
+                conf.classList.add('confetti');
+                conf.style.left = Math.random() * 100 + 'vw';
+                conf.style.animationDuration = 3 + Math.random() * 3 + 's';
+                conf.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+                container.appendChild(conf);
+            }
+        }
+        createConfetti();
+    </script>
+
+</body>
+</html>
